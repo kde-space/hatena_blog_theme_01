@@ -78,4 +78,4 @@ boilerplate/
 # 過去のバージョン
 
 - <https://github.com/hatena/Hatena-Blog-Theme-Boilerplate-Less>
-  - BoilerplateのLessバージョンです。（開発終了）
+  - BoilerplateのLessバージョンです。（開発終了）# hatena_blog_theme_01
