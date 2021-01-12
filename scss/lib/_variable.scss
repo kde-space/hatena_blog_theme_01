@@ -1,27 +1,56 @@
 // Variables
 
 // Background color
-$background: #fff;
+$background: #E0E0E0;
 $bg-light: #f5f5f5;
+$bg-header: #000;
+
+$color-bg-base: #E0E0E0;
+$color-bg-light: #f5f5f5;
+$color-bg-globalHeader: #444;
+$color-bg-header: #000;
+$color-bg-footer: #000;
+$color-bg-white: #fff;
+
+$color-text-base: #000;
+$color-text-light: #E0E0E0;
+$color-text-white: #fff;
+$color-text-link: #0057E2;
+
+$color-border-base: #000;
+$color-border-light: #E0E0E0;
+$color-border-white: #fff;
+
+$font-size-base-num: 16;
+$font-size-base: (16/$font-size-base-num) + rem;
+$font-size-title: (24/$font-size-base-num) + rem;
+$font-size-entry-title: (28/$font-size-base-num) + rem;
+$font-size-head-l: (28/$font-size-base-num) + rem;
+$font-size-head-m: (24/$font-size-base-num) + rem;
+$font-size-head-s: (20/$font-size-base-num) + rem;
+$font-size-s: (14/$font-size-base-num) + rem;
+$font-size-2s: (14/$font-size-base-num) + rem;
+
+$font-size-footer: (14/$font-size-base-num) + rem;
 
 // text color
-$text: #454545;
+$text: #000;
 $text-light: #999;
-$text-header: #333;
+$text-header: #fff;
 
 // link
-$link: #1487bd;
+$link: #0057E2;
 $hover: darken($link, 10%);
 
 // border
-$border: #ddd;
+$border: #000;
 
 // button
 $btn: #fff;
 $btn-hover: #f5f5f5;
 
 // Media Queries
-$mq-xs: "(max-width: 480px)";
-$mq-sm: "(min-width: 768px)";
-$mq-md: "(min-width: 992px)";
-$mq-lg: "(min-width: 1200px)";
+$mq-xs: "screen and (max-width: 480px)";
+$mq-sm: "screen and (min-width: 768px)";
+$mq-md: "screen and (min-width: 992px)";
+$mq-lg: "screen and (min-width: 1200px)";
