@@ -75,6 +75,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 #wrapper {
+    width: 100%;
+    box-sizing: border-box;
     border-left: 1px solid $color-border-base;
     padding: 28px 0 48px;
 
@@ -635,12 +637,15 @@ h1,h2,h3,h4,h5,h6 {
     // @media #{$mq-sm} {
     //     font-size: .9rem;
     // }
+    @at-root #main & {
+        padding: 0;
+    }
 }
 
 .hatena-module-title {
     // margin-bottom: .6em;
     padding-bottom: 16px;
-    border-bottom: 1px solid $color-border-base;
+    // border-bottom: 1px solid $color-border-base;
     font-size: 1rem;
     font-weight: bold;
     line-height: 1.3;
@@ -692,7 +697,7 @@ h1,h2,h3,h4,h5,h6 {
     }
 
     .hatena-follow-button-box {
-        margin: 0;
+        margin: 8px 0 0 0;
     }
 }
 
@@ -753,11 +758,24 @@ h1,h2,h3,h4,h5,h6 {
         padding: 0;
         margin: 0 8px 0 0;
     }
+
+    @at-root #main & li:last-child {
+        padding-bottom: 16px;
+    }
 }
 
 .urllist-with-thumbnails li .urllist-image {
     margin-right: 12px;
     margin-bottom: 0;
+}
+
+.hatena-module-profile {
+    .profile-activities {
+        font-size: $font-size-2s;
+        font-style: normal;
+        margin: 8px 0;
+        opacity: 1;
+    }
 }
 
 /* Search module */
@@ -822,54 +840,117 @@ h1,h2,h3,h4,h5,h6 {
     }
 }
 
+.figure-image figcaption {
+    font-size: $font-size-base;
+    font-style: italic;
+    opacity: 1;
+}
+
+/* 続きを読む */
+.entry-see-more {
+  display: block;
+  padding: 12px 16px;
+  margin: 40px 0;
+  text-align: center;
+  border: 1px solid $color-text-link;
+  text-decoration: none;
+
+  &:hover {
+      text-decoration: underline;
+  }
+}
+
 /* About ページ */
 .page-about {
     .entry-content {
-        dt {
-            font-weight: bold;
-            border-bottom: 1px solid $color-border-base;
-            margin-bottom: .5em;
+        > dl {
+            margin: 0;
         }
-        dd {
-            margin-left: 0;
-            margin-bottom: 2em;
+        // dt {
+        //     font-weight: bold;
+        //     border-bottom: 1px solid $color-border-base;
+        //     margin-bottom: .5em;
+        // }
+        // dd {
+        //     margin-left: 0;
+        //     margin-bottom: 2em;
+        // }
+        .about-subscription-count {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .subscriber {
+            margin-right: 8px;
+            margin-bottom: 8px;
         }
     }
 }
 
 /* Archive */
 .archive-header-category {
-    text-align: center;
+    margin: 0;
+}
+
+.archive-heading {
+    padding: 16px 28px;
+    margin: 0;
+    color: $color-text-light;
+    font-size: $font-size-title;
+    background-color: $color-bg-header;
+
+    @at-root .archive-header-category & {
+        margin-bottom: 0;
+        font-size: $font-size-title;
+    }
 }
 
 .page-archive {
+    // ページ上部広告
+    .ad-online-afc {
+        margin-bottom: 48px;
+    }
+
+    .archive-entries {
+        border-top: 1px solid $color-border-base;
+    }
+
     .archive-entry {
-        margin-bottom: 3em;
+        // margin-bottom: 3em;
+        padding: 28px;
         margin-left: auto;
         margin-right: auto;
-        line-height: 1.3;
+        border-bottom: 1px solid $color-border-base;
+        // line-height: 1.3;
+    }
+
+    .categories {
+        padding: 0;
+        margin-bottom: 20px;
+        border-top: none;
     }
 
     .entry-title {
-        margin: .3em auto;
+        margin: 16px auto;
     }
 
     .entry-thumb {
         width: 80px;
         height: 80px;
         background-size: cover;
+
         @media #{$mq-sm} {
             width: 120px;
             height: 120px;
+            margin-right: 20px;
         }
     }
 
     .entry-description {
         margin: 0;
-        font-size: .85rem;
-        @media #{$mq-sm} {
-            font-size: .9rem;
-        }
+        font-size: $font-size-s;
+        // @media #{$mq-sm} {
+        //     font-size: .9rem;
+        // }
     }
     
     .social-buttons {
@@ -931,14 +1012,20 @@ div.footnote {
     margin-bottom: 20px;
 }
 
-.entry-tag {
+.archive-entry-tags-wrapper {
+    margin-top: 20px;
+}
+
+.entry-tag,
+.archive-entry-tag {
     margin-right: 4px;
 
-    .entry-tag-link {
+    .entry-tag-link,
+    .archive-entry-tag-link {
         color: $color-text-link;
         background-color: transparent;
         border-radius: 0;
-        border: 1px solid;
+        border: 1px solid $color-text-link;
 
         &:hover {
             text-decoration: underline;
@@ -946,7 +1033,41 @@ div.footnote {
         }
     }
 
-    .entry-tag-icon path {
+    .entry-tag-icon path,
+    .archive-entry-tag-icon path {
         fill: $color-text-link;
+    }
+}
+
+/* 検索結果 */
+.search-result {
+    margin-bottom: 28px;
+
+    .search-result-form {
+        // display: flex;
+        // align-items: center;
+        margin-top: 28px;
+        margin-left: 28px;
+        border-radius: 0;
+        border: 1px solid $color-border-base;
+        background-color: transparent;
+        line-height: 1.4;
+
+        .search-result-input {
+            padding: 8px;
+            color: $color-text-base;
+            height: 20px;
+            box-sizing: content-box;
+        }
+
+        .search-result-button {
+            width: 24px;
+            height: 24px;
+            opacity: 1;
+
+            &:hover {
+                opacity: .5;
+            }
+        }
     }
 }
