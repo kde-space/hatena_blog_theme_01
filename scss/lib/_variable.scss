@@ -1,9 +1,9 @@
 // Variables
 
 // Background color
-$background: #E0E0E0;
-$bg-light: #f5f5f5;
-$bg-header: #000;
+// $background: #E0E0E0;
+// $bg-light: #f5f5f5;
+// $bg-header: #000;
 
 $color-bg-base: #E0E0E0;
 $color-bg-light: #f5f5f5;
@@ -15,9 +15,11 @@ $color-bg-white: #fff;
 $color-text-base: #000;
 $color-text-light: #E0E0E0;
 $color-text-white: #fff;
-$color-text-link: #0057E2;
+$color-text-link: #1023d1;
+$color-text-visited: #609;
 
 $color-border-base: #000;
+$color-border-dark: #999;
 $color-border-light: #E0E0E0;
 $color-border-white: #fff;
 
@@ -30,24 +32,29 @@ $font-size-head-m: (24/$font-size-base-num) + rem;
 $font-size-head-s: (20/$font-size-base-num) + rem;
 $font-size-s: (14/$font-size-base-num) + rem;
 $font-size-2s: (12/$font-size-base-num) + rem;
-
 $font-size-footer: (14/$font-size-base-num) + rem;
 
+$font-size-entry-title-sp: (24/$font-size-base-num) + rem;
+$font-size-head-l-sp: (22/$font-size-base-num) + rem;
+$font-size-head-m-sp: (20/$font-size-base-num) + rem;
+$font-size-head-s-sp: (18/$font-size-base-num) + rem;
+
+
 // text color
-$text: #000;
-$text-light: #999;
-$text-header: #fff;
+// $text: #000;
+// $text-light: #999;
+// $text-header: #fff;
 
 // link
-$link: #0057E2;
-$hover: darken($link, 10%);
+// $link: #0057E2;
+// $hover: darken($link, 10%);
 
 // border
-$border: #000;
+// $border: #000;
 
 // button
-$btn: #fff;
-$btn-hover: #f5f5f5;
+// $btn: #fff;
+// $btn-hover: #f5f5f5;
 
 // Media Queries
 $mq-xs: "screen and (max-width: 480px)";
