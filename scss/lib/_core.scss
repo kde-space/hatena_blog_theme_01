@@ -1,16 +1,16 @@
 html,
 body {
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS PGothic';
-    color: $color-text-base;
+    color: $color-black;
     background-color: $color-bg-base;
     line-height: 1.6;
 }
 
 a {
-    color: $color-text-link;
+    color: $color-link;
 
     &:visited {
-        color: $color-text-visited;
+        color: $color-link-visited;
     }
 
     &:hover {
@@ -20,17 +20,17 @@ a {
 
     &.keyword {
         text-decoration: none;
-        border-bottom: 1px dotted $color-border-dark;
-        color: $color-text-base;
+        border-bottom: 1px dotted $color-grey;
+        color: $color-black;
     }
 }
 
 h1,h2,h3,h4,h5,h6 {
-    color: $color-text-base;
+    color: $color-black;
     line-height: 1.3;
 
     a {
-        color: $color-text-link;
+        color: $color-link;
 
         &:hover {
             // color: $hover;
@@ -45,23 +45,12 @@ h1,h2,h3,h4,h5,h6 {
 */
 #globalheader-container {
     background-color: $color-bg-globalHeader;
-    color: $color-text-white;
+    color: $color-white;
 }
 
 /* container */
 #container,
 #footer {
-    // padding-left: 10px;
-    // padding-right: 10px;
-    // @media #{$mq-sm} {
-    //     width: 720px;
-    //     margin: auto;
-    //     padding-left: 0;
-    //     padding-right: 0;
-    // }
-    // @media #{$mq-md} {
-    //     width: 940px;
-    // }
 }
 
 /* 2カラムレイアウト */
@@ -85,7 +74,7 @@ h1,h2,h3,h4,h5,h6 {
 
     @media #{$mq-sm} {
         width: calc(100% - 240px);
-        border-left: 1px solid $color-border-base;
+        border-left: 1px solid $color-black;
         padding: 28px 0 48px;
     }   
     @media #{$mq-md} {
@@ -99,107 +88,55 @@ h1,h2,h3,h4,h5,h6 {
     
     @media #{$mq-sm} {
         width: 240px;
-        border-left: 1px solid $color-border-base;
-        border-right: 1px solid $color-border-base;
+        border-left: 1px solid $color-black;
+        border-right: 1px solid $color-black;
     }
     @media #{$mq-md} {
         width: 338px;
     }
 }
 .adx-responsive-mode + #box2-inner {
-    border-top: 1px solid $color-border-base;
+    border-top: 1px solid $color-black;
 }
 
 #footer-ad-rectangle {
     margin-top: 0;
     padding-top: 1em;
-    border-top: 1px solid $color-border-base;
+    border-top: 1px solid $color-black;
 }
-/* 下記のスタイルを適用するとテーマを1カラムレイアウトにできます。
-利用するにはコメントアウトを解除してください。
-（2カラムレイアウトの場合はコメントアウト全体が不要です）
-
-#content-inner {
-    flex-direction: column;
-    align-items: center;
-}
-#wrapper {
-    @media #{$mq-sm} {
-        width: 100%;
-    }
-    @media #{$mq-md} {
-        max-width: 720px;
-    }
-}
-#box2 {
-    width: 100%;
-    @media #{$mq-sm} {
-        width: 100%;
-    }
-    @media #{$mq-md} {
-        width: 100%;
-    }
-}
-
-#box2-inner {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    @media #{$mq-sm} {
-        margin-left: -20px;
-        flex-direction: row;
-    }
-    @media #{$mq-md} {
-        margin-left: -30px;
-    }
-}
-.hatena-module {
-    width: 100%;
-    @media #{$mq-sm} {
-        width: 33.3333%;
-    }
-    @media #{$mq-md} {
-        padding-left: 30px;
-    }
-}
-
----- END 1カラム */
 
 /* ヘッダ */
 #blog-title {
     padding: 40px 0;
     text-align: left;
-    background-color: $color-bg-header;
+    background-color: $color-black;
     
     @media #{$mq-sm} {
-        // margin: 3em 0;
         text-align: left;
+    }
+
+    // ヘッダー画像 + タイトルのとき
+    @at-root .header-image-enable & {
+        padding: 0;
     }
 }
 
 #blog-title-inner { 
-    // @media #{$mq-sm} {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-    // }
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 #title {
     margin: 0;
     font-size: $font-size-title;
 
-    // @media #{$mq-md} {
-    //     font-size: $font-size-title;
-    // }
-
     a {
-        color: $color-text-white;
+        color: $color-white;
         text-decoration: none;
 
         &:hover {
-            color: darken($color-text-white, 20%);
+            color: darken($color-white, 20%);
         }
     }
 }
@@ -208,22 +145,42 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
     font-size: $font-size-s;
     margin: 1em 0 0;
-    color: $color-text-white;
+    color: $color-white;
 }
 
 /* ヘッダ画像を設定したとき */
-.header-image-enable {
+.header-image-enable,
+.header-image-only {
     #blog-title {
-        margin: 0 0 2em;
+        padding: 0;
+        margin: 0 0 28px;
+        // padding-bottom: 28px;
+        // border-bottom: 1px solid $color-black;
+
+        #title a,
+        #blog-description {
+            text-shadow: 0 0 8px rgba(#000, .5);
+        }
     }
     #blog-title-inner {
         display: flex;
         flex-direction: row;
         align-items: center;
+        padding: 0;
+        background-size: cover;
     }
     #blog-title-content {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+        @media #{$mq-sm} {
+            margin-left: 28px;
+            margin-right: 28px;
+        }    
+    }
+    #wrapper,
+    #box2 {
+        border-top: 1px solid $color-black;
     }
 }
 
@@ -235,7 +192,16 @@ h1,h2,h3,h4,h5,h6 {
 /* パンくず（カテゴリー、記事ページで表示されます） */
 .breadcrumb {
     font-size: $font-size-s;
-    border-bottom: 1px solid $color-border-base;
+    border-bottom: 1px solid $color-black;
+
+    @at-root .page-entry & {
+        margin-bottom: 0;
+    }
+
+    @at-root .header-image-enable &,
+    .header-image-only & {
+        border-bottom: none;
+    }
 }
 
 .breadcrumb-inner {
@@ -249,10 +215,9 @@ h1,h2,h3,h4,h5,h6 {
     position: relative;
     // margin-bottom: 4em;
     padding: 0 20px 48px;
-    border-bottom: 1px solid $color-border-base;
+    border-bottom: 1px solid $color-black;
 
     @media #{$mq-sm} {
-        // width: 240px;
         padding: 0 28px 48px;
     }
 
@@ -263,7 +228,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .entry-header {
     margin-bottom: 28px;
-    border-bottom: 1px solid $color-border-base;
+    border-bottom: 1px solid $color-black;
     position: relative;
 }
 
@@ -275,14 +240,6 @@ h1,h2,h3,h4,h5,h6 {
     @media #{$mq-xs} {
         margin-bottom: 12px;
     }
-
-    // a {
-    //     color: $text-light;
-    //     text-decoration: none;
-    //     &:hover {
-    //         text-decoration: underline;
-    //     }
-    // }
 }
 
 .entry-title {
@@ -298,7 +255,7 @@ h1,h2,h3,h4,h5,h6 {
     // margin: .5em 0;
     padding: 8px 0;
     font-size: $font-size-s;
-    border-top: 1px solid $color-border-base;
+    border-top: 1px solid $color-black;
 
     a {
         margin-right: .7em;
@@ -314,7 +271,7 @@ h1,h2,h3,h4,h5,h6 {
     a {
         line-height: 1;
         padding: 8px 12px;
-        border: 1px solid $color-text-link;
+        border: 1px solid $color-link;
         font-size: $font-size-s;
         text-decoration: none;
 
@@ -362,22 +319,18 @@ h1,h2,h3,h4,h5,h6 {
     }
     h3 {
         padding: 4px 8px;
-        color: $color-text-light;
+        color: $color-bg-base;
         font-size: $font-size-head-m;
-        background-color: $color-bg-header;
+        background-color: $color-black;
 
         @media #{$mq-xs} {
             font-size: $font-size-head-m-sp;
         }
-
-        // @media #{$mq-md} {
-        //     font-size: 1.3rem;
-        // }
     }
     h4 {
         padding-bottom: 4px;
         font-size: $font-size-head-m;
-        border-bottom: 1px solid $color-border-base;
+        border-bottom: 1px solid $color-black;
 
         @media #{$mq-xs} {
             font-size: $font-size-head-m-sp;
@@ -386,7 +339,7 @@ h1,h2,h3,h4,h5,h6 {
     h5 {
         padding: 2px 0 2px 12px;
         font-size: $font-size-head-s;
-        border-left: 6px solid $color-border-base;
+        border-left: 6px solid $color-black;
 
         @media #{$mq-xs} {
             font-size: $font-size-head-s-sp;
@@ -418,7 +371,7 @@ h1,h2,h3,h4,h5,h6 {
     }
     dd {
         padding-left: 1.5em;
-        border-left: 1px solid $color-border-base;
+        border-left: 1px solid $color-black;
     }
     table {
         border-collapse: collapse;
@@ -428,29 +381,25 @@ h1,h2,h3,h4,h5,h6 {
         width: 100%;
         overflow: auto;
         display: block;
-        // font-size: .8rem;
-        // @media #{$mq-md} {
-        //     font-size: .9rem;
-        // }
     }
 
     table th,
     table td {
-        border: 1px solid $color-border-base;
+        border: 1px solid $color-black;
         padding: 8px 12px;
     }
 
     table th {
-        color: $color-text-light;
-        background-color: $color-bg-header;
+        color: $color-bg-base;
+        background-color: $color-black;
 
         &:not(:last-child) {
-            border-right-color: $color-border-light;
+            border-right-color: $color-bg-base;
         }
     }
 
     blockquote {
-        border: 1px solid $color-border-base;
+        border: 1px solid $color-black;
         margin: 24px 0;
         padding: 24px;
         font-style: italic;
@@ -471,7 +420,7 @@ h1,h2,h3,h4,h5,h6 {
             display: block;
             padding-top: 16px;
             text-align: right;
-            border-top: 1px solid $color-border-base;
+            border-top: 1px solid $color-black;
             font-size: $font-size-s;
         }
     }
@@ -479,11 +428,11 @@ h1,h2,h3,h4,h5,h6 {
     pre,
     code {
         font-family: 'Consolas', 'Monaco', 'Courier New', Courier, monospace, sans-serif;
-        color: $color-text-white;
+        color: $color-white;
     }
 
     pre {
-        background: $color-bg-header;
+        background: $color-black;
         border: none;
         white-space: pre-wrap;
         text-overflow: ellipsis;
@@ -512,17 +461,17 @@ h1,h2,h3,h4,h5,h6 {
         font-size: 90%;
         margin: 0 2px;
         padding: 2px 5px;
-        background-color: $color-bg-header;
+        background-color: $color-black;
         border-radius: 0;
         vertical-align: middle;
-        // color: $color-text-white;
+        // color: $color-white;
     }
 
     hr {
         width: 30%;
         border: 0;
         border: none;
-        border-top: 1px solid $color-border-base;
+        border-top: 1px solid $color-black;
         margin: 2em auto;
     }
 
@@ -530,7 +479,7 @@ h1,h2,h3,h4,h5,h6 {
         position: relative;
         padding: 24px 24px 24px 48px;
         margin: 32px 0 24px;
-        border: 1px solid $color-border-base;
+        border: 1px solid $color-black;
 
         @media #{$mq-xs} {
             padding: 16px 16px 16px 2em;
@@ -553,7 +502,7 @@ h1,h2,h3,h4,h5,h6 {
         margin-top: 24px;
         margin-bottom: 24px;
         font-size: $font-size-s;
-        background-color: $color-bg-white;
+        background-color: $color-white;
 
         @media #{$mq-xs} {
             padding: 16px;
@@ -586,11 +535,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .entry-footer-section {
-    // color: $text-light;
     font-size: $font-size-s;
-    // a {
-    //     color: $text-light;
-    // }
 }
 
 .google-afc-image {
@@ -616,16 +561,10 @@ h1,h2,h3,h4,h5,h6 {
         padding: 0;
         line-height: 1.7;
         font-size: $font-size-s;
-        // font-size: .85rem;
-        // @media #{$mq-sm} {
-        //     font-size: .9rem;
-        // }
     }
 
     .entry-comment {
         padding-left: 64px;
-        // padding: 10px 0 10px 60px;
-        // border-bottom: 1px solid $color-border-base;
         position: relative;
 
         @media #{$mq-xs} {
@@ -659,7 +598,7 @@ h1,h2,h3,h4,h5,h6 {
     padding-bottom: 0.8em;
     padding-left: 20px;
     margin: 0;
-    border-left: 1px solid $color-border-base;
+    border-left: 1px solid $color-black;
 
     @media #{$mq-xs} {
         padding-left: 16px;
@@ -670,9 +609,9 @@ h1,h2,h3,h4,h5,h6 {
     padding-left: 20px;
     margin: 0;
     word-wrap: break-word;
-    color: $color-text-base;
+    color: $color-black;
     // font-size: .85rem;
-    border-left: 1px solid $color-border-base;
+    border-left: 1px solid $color-black;
 
     @media #{$mq-xs} {
         padding-left: 16px;
@@ -686,12 +625,6 @@ h1,h2,h3,h4,h5,h6 {
 .comment-metadata {
     padding-left: 21px;
     margin: 16px 0 0 0;
-    // color: $text-light;
-    // margin: 0;
-    // font-size: .8rem;
-    // a {
-    //     color: $text-light;
-    // }
 
     @media #{$mq-xs} {
         padding-left: 17px;
@@ -701,7 +634,7 @@ h1,h2,h3,h4,h5,h6 {
 .leave-comment-title {
     padding: 12px 16px;
     font-size: $font-size-s;
-    border: 1px solid $color-text-link;
+    border: 1px solid $color-link;
 
     &:hover {
         text-decoration: underline;
@@ -711,11 +644,9 @@ h1,h2,h3,h4,h5,h6 {
 /* Pager */
 
 .pager {
-    padding: 20px 20px 0;
-    // margin: 28px 0 0;
     display: flex;
     justify-content: space-between;
-
+    padding: 20px 20px 0;
         
     @media #{$mq-sm} {
         padding: 28px 28px 0;
@@ -731,12 +662,10 @@ h1,h2,h3,h4,h5,h6 {
     box-sizing: border-box;
     padding: 20px;
     font-size: $font-size-s;
-    border-bottom: 1px solid $color-border-base;
+    border-bottom: 1px solid $color-black;
 
     @media #{$mq-sm} {
         padding: 28px;
-        // font-size: .9rem;
-        // margin-bottom: 3em;
     }
 
     @at-root #main & {
@@ -745,15 +674,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .hatena-module-title {
-    // margin-bottom: .6em;
     padding-bottom: 16px;
-    // border-bottom: 1px solid $color-border-base;
     font-size: 1rem;
     font-weight: bold;
     line-height: 1.3;
     
     a {
-        color: $color-text-base;
+        color: $color-black;
         text-decoration: none;
 
         &:hover {
@@ -776,7 +703,7 @@ h1,h2,h3,h4,h5,h6 {
     }
     .archive-module-hide-button,
     .archive-module-show-button {
-        color: $color-text-link;
+        color: $color-link;
     }
 }
 
@@ -811,21 +738,14 @@ h1,h2,h3,h4,h5,h6 {
 
     li {
         padding: 16px 0;
-        border-top: 1px solid $color-border-base;
+        border-top: 1px solid $color-black;
 
-        // a {
-        //     text-decoration: none;
-        //     &:hover {
-        //         text-decoration: underline;
-        //     }
-        // }
         &:last-child {
             padding-bottom: 0;
         }
     }
 
     .urllist-item-inner {
-        // display: flex;
     }
 
     .urllist-category-link {
@@ -838,10 +758,6 @@ h1,h2,h3,h4,h5,h6 {
         margin-bottom: 12px;
         font-size: $font-size-2s;
     }
-
-    // .urllist-date-link a {
-    //     color: $text-light;
-    // }
 
     .urllist-entry-body {
         margin-top: .3em;
@@ -883,7 +799,7 @@ h1,h2,h3,h4,h5,h6 {
 /* Search module */
 .hatena-module-search-box {
     .search-form {
-        border: 1px solid $color-border-base;
+        border: 1px solid $color-black;
         // border-radius: 3px;
         width: 100%;
         box-sizing: border-box;
@@ -894,7 +810,7 @@ h1,h2,h3,h4,h5,h6 {
     .search-module-input {
         flex: 1 0;
         padding: 8px;
-        color: $color-text-base;
+        color: $color-black;
         background: none;
         border: none;
         outline: none;
@@ -950,19 +866,19 @@ h1,h2,h3,h4,h5,h6 {
 
 /* 続きを読む */
 .entry-see-more {
-  display: block;
-  padding: .8em 1em;
-  margin: 2em 0;
-  text-align: center;
-  border: 1px solid $color-text-link;
-  text-decoration: none;
+    display: block;
+    padding: .8em 1em;
+    margin: 2em 0;
+    text-align: center;
+    border: 1px solid $color-link;
+    text-decoration: none;
 
-  &:visited {
-      border-color: $color-text-visited;
-  }
-  &:hover {
-      text-decoration: underline;
-  }
+    &:visited {
+        border-color: $color-link-visited;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 /* About ページ */
@@ -971,15 +887,6 @@ h1,h2,h3,h4,h5,h6 {
         > dl {
             margin: 0;
         }
-        // dt {
-        //     font-weight: bold;
-        //     border-bottom: 1px solid $color-border-base;
-        //     margin-bottom: .5em;
-        // }
-        // dd {
-        //     margin-left: 0;
-        //     margin-bottom: 2em;
-        // }
         .about-subscription-count {
             display: block;
             margin-bottom: 8px;
@@ -999,9 +906,9 @@ h1,h2,h3,h4,h5,h6 {
 .archive-heading {
     padding: 16px 20px;
     margin: 0;
-    color: $color-text-light;
+    color: $color-bg-base;
     font-size: $font-size-head-s;
-    background-color: $color-bg-header;
+    background-color: $color-black;
 
     @media #{$mq-sm} {
         padding-right: 28px;
@@ -1032,16 +939,14 @@ h1,h2,h3,h4,h5,h6 {
         }
     }
     .archive-entries {
-        border-top: 1px solid $color-border-base;
+        border-top: 1px solid $color-black;
     }
 
     .archive-entry {
-        // margin-bottom: 3em;
         padding: 28px;
         margin-left: auto;
         margin-right: auto;
-        border-bottom: 1px solid $color-border-base;
-        // line-height: 1.3;
+        border-bottom: 1px solid $color-black;
     }
 
     .categories {
@@ -1069,9 +974,6 @@ h1,h2,h3,h4,h5,h6 {
     .entry-description {
         margin: 0;
         font-size: $font-size-s;
-        // @media #{$mq-sm} {
-        //     font-size: .9rem;
-        // }
     }
     
     .social-buttons {
@@ -1084,15 +986,13 @@ h1,h2,h3,h4,h5,h6 {
 /* footer */
 #footer {
     padding: 28px;
-    // margin-top: 2em;
-    // padding-bottom: 2rem;
     text-align: center;
     font-size: $font-size-footer;
-    color: $color-text-light;
-    background-color: $color-bg-footer;
+    color: $color-bg-base;
+    background-color: $color-black;
 
     a {
-        color: $color-text-light;
+        color: $color-bg-base;
     }
 
     p {
@@ -1143,23 +1043,23 @@ div.footnote {
 
     .entry-tag-icon path,
     .archive-entry-tag-icon path {
-        fill: $color-text-link;
+        fill: $color-link;
     }
 
     .entry-tag-link,
     .archive-entry-tag-link {
-        color: $color-text-link;
+        color: $color-link;
         background-color: transparent;
         border-radius: 0;
-        border: 1px solid $color-text-link;
+        border: 1px solid $color-link;
 
         &:visited {
-            color: $color-text-visited;
-            border-color: $color-text-visited;
+            color: $color-link-visited;
+            border-color: $color-link-visited;
 
             .entry-tag-icon path,
             .archive-entry-tag-icon path {
-                fill: $color-text-visited;
+                fill: $color-link-visited;
             }        
         }
 
@@ -1176,12 +1076,10 @@ div.footnote {
     margin-bottom: 28px;
 
     .search-result-form {
-        // display: flex;
-        // align-items: center;
         margin-top: 20px;
         margin-left: 20px;
         border-radius: 0;
-        border: 1px solid $color-border-base;
+        border: 1px solid $color-black;
         background-color: transparent;
         line-height: 1.4;
 
@@ -1193,7 +1091,7 @@ div.footnote {
 
         .search-result-input {
             padding: 8px;
-            color: $color-text-base;
+            color: $color-black;
             height: 20px;
             box-sizing: content-box;
         }
