@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveSassCompile.settings.autoprefix": [
+			"last 2 Chrome versions",
+			"last 2 Firefox versions",
+			"last 2 Safari versions",
+			"last 2 Edge versions",
+			"IE 11",
+			"iOS >= 8",
+			"Android >= 4.4"
+		],
+		"liveSassCompile.settings.formats": [
+			{
+				"format": "compressed",
+				"extensionName": ".css",
+				"savePath": "/css"
+			}
+		]
+	}
+}
